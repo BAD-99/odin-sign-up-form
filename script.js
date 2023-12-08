@@ -5,6 +5,10 @@ pass.addEventListener('keyup', confirm);
 confirmPass.addEventListener('keyup', confirm)
 
 function confirm(){
+    if(pass.value === '' && confirmPass.value === ''){
+        pass.classList.toggle('error', false);
+        confirmPass.classList.toggle('error', false);
+    }
     if(pass.value != confirmPass.value){
         pass.classList.toggle('error', true);
         confirmPass.classList.toggle('error', true);
@@ -14,3 +18,4 @@ function confirm(){
         confirmPass.classList.toggle('error', false);
     }
 }
+confirm();
